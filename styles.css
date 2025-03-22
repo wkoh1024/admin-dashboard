@@ -55,9 +55,8 @@ html {
 .sidebar {
 	background-color: #1992d4;
 	color: white;
-	gap: 20px;
+	gap: 50px;
 	padding-left: 20px;
-	/* padding-top: calc(100px/3); */
 	padding-top: 20px;
 	display: flex;
 	flex-direction: column;
@@ -69,6 +68,7 @@ body {
 	"sidebar content content content"
 	"sidebar content content content"
 	"sidebar content content content";
+	grid-template-columns: 18% repeat(3, 1fr);
 	height: 100%;
  
 }
@@ -83,12 +83,13 @@ body {
 }
 
 .other-options, .menu-options {
-	--default-font-size: 30px
+	--default-font-size: 20px;
 	display: grid;
-	grid: 1fr/ 1fr 3fr;
+	grid: 1fr/ .5fr 4fr;
 	gap: calc(--default-font-size/10);
 	font-size: var(--default-font-size);
 	padding-right: 30px;
+	gap: 20px;
 }
 
 .sidebar, .other-options, .menu-options {
@@ -96,6 +97,23 @@ body {
 }
 
 svg {
-	width: 17px;
+	width: 20px;
 	filter: invert(95%) sepia(80%) saturate(0%) hue-rotate(211deg) brightness(105%) contrast(101%);
+	place-self: center;
+}
+
+.dashboard {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	grid: 1fr/ .5fr 4fr;
+}
+
+.dashboard > svg {
+	width: 40px;
+	place-self: center;
+}
+
+.content {
+	grid-area: content;
 }
