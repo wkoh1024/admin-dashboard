@@ -77,7 +77,7 @@ body {
 	grid-area: sidebar;
 }
 
-.sidebar h2 {
+.sidebar h1 {
 	font-size: 25px;
 	justify-content: flex-start;
 }
@@ -120,7 +120,6 @@ svg {
 
 .header svg {
 	filter: brightness(0) saturate(100%);
-
 }
 
 .header {
@@ -210,4 +209,34 @@ svg {
 	padding: 10px;
 	border-radius: 20px;
 	width: 100px;
+}
+
+h2 {
+	font-weight: bold;
+	opacity: 90%;
+	font-size: 18px;
+	padding-bottom: 8px;
+}
+
+.main {
+	display: grid;
+	grid-template-areas: 
+	"projects projects projects announcements"
+	"projects projects projects trending";
+	grid-template-rows: 1fr 1fr;
+	padding-top: 30px;
+	padding-left: 20px;
+	row-gap: 10px;	
+}
+
+.projects {
+	grid-area: projects;
+}
+
+.annoucenments {
+	grid-area: announcements;
+}
+
+.trending {
+	grid-area: trending;
 }
