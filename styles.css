@@ -118,7 +118,7 @@ svg {
 	grid-area: content;
 }
 
-.header svg {
+.header-left svg, .header-right svg {
 	filter: brightness(0) saturate(100%);
 }
 
@@ -226,17 +226,56 @@ h2 {
 	grid-template-rows: 1fr 1fr;
 	padding-top: 30px;
 	padding-left: 20px;
-	row-gap: 10px;	
+	row-gap: 10px;
+	background-color: #e3e8ef;
+	grid-template-rows: auto;
 }
 
 .projects {
 	grid-area: projects;
 }
 
-.annoucenments {
+.announcenments {
 	grid-area: announcements;
 }
 
 .trending {
 	grid-area: trending;
+}
+
+.card-gallery {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 20px;
+}
+
+.card h3 {
+	font-weight: bold;
+}
+
+
+.card {
+	background-color: white;
+	border-left: 7px #e8b54a solid;
+	border-radius: 7px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 0 20px;
+	height: 160px;
+}
+
+.symbols {
+	display: flex;
+	align-self: flex-end;
+	gap: 20px;
+}
+
+.card p {
+	color: #676767;
+}
+
+.card svg {
+	filter: brightness(0) saturate(100%);	
 }
