@@ -225,7 +225,6 @@ h2 {
 	grid-template-areas: 
 	"projects projects projects announcements"
 	"projects projects projects trending";
-	grid-template-rows: 1fr 1fr;
 	grid-template-columns: repeat(3, 1fr) .75fr;
 	padding: 30px 0px 20px 30px;
 	background-color: #e3e8ef;
@@ -236,8 +235,9 @@ h2 {
 }
 
 .projects {
+	display: flex;
+	flex-direction: column;
 	grid-area: projects;
-	align-self: stretch;
 }
 
 .announcements {
@@ -247,10 +247,10 @@ h2 {
 .trending {
 	grid-area: trending;
 	align-self: end;
-}
-
-.trending{
+	display: flex;
+	flex-direction: column;
 	height: 90%;
+	justify-content: end;
 }
 
 .announcements-card, .trending-card {
@@ -271,7 +271,7 @@ h2 {
 .card-gallery {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
+	flex: 1;
 	gap: 20px;
 }
 
@@ -287,7 +287,6 @@ h2 {
 	flex-direction: column;
 	justify-content: space-around;
 	padding: 0 20px;
-	height: 170px;
 }
 
 .symbols {
@@ -377,4 +376,8 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
+}
+
+.user-info P:first-child{
+	font-weight: bolder;
 }
