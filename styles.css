@@ -116,6 +116,8 @@ svg {
 
 .content {
 	grid-area: content;
+	display: flex;
+	flex-direction: column;
 }
 
 .header-left svg, .header-right svg {
@@ -224,30 +226,47 @@ h2 {
 	"projects projects projects announcements"
 	"projects projects projects trending";
 	grid-template-rows: 1fr 1fr;
-	padding-top: 30px;
-	padding-left: 20px;
+	grid-template-columns: repeat(3, 1fr) .75fr;
+	padding: 30px 0px 20px 30px;
 	background-color: #e3e8ef;
 	grid-template-rows: auto;
 	column-gap: 20px;
+	align-items: stretch;
+	flex: 1;
 }
 
 .projects {
 	grid-area: projects;
+	align-self: stretch;
 }
 
 .announcements {
 	grid-area: announcements;
-	display: flex;
-	flex-direction: column;
 }
 
 .trending {
 	grid-area: trending;
+	align-self: end;
 }
 
-.announcements, .trending {
-	background-color: white;
+.trending{
+	height: 90%;
 }
+
+.announcements-card, .trending-card {
+	background-color: white;
+	margin-right: 20px;
+	height: 90%;
+}
+
+.trending-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 30px;
+}
+
+
 
 .card-gallery {
 	display: grid;
@@ -264,7 +283,6 @@ h2 {
 .card {
 	background-color: white;
 	border-left: 7px #e8b54a solid;
-	border-radius: 7px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -292,7 +310,71 @@ h2 {
 	font-size: 15px;
 }
 
-.announcements div:not(:nth-child(4)) {
+.announcements div:not(:last-child) {
 	border-bottom: 1px #676767 solid;
+	padding-bottom: 10px;
 }
 
+.announcements div:not(:last-child) {
+	border-bottom: 1px #d2d2d2 solid;
+	padding-bottom: 10px;
+}
+
+.announcements-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 30px;
+	/* gap: 10px; */
+}
+
+.announcements-card div:not(:first-child){
+	padding-top: 10px;
+}
+
+.announcements-card h3{
+	padding-bottom: 3px;
+}
+
+[class*="card"]:not(.card-gallery) {
+	box-shadow: 0px 7px 9px -7px rgba(0,0,0,0.61);
+	border-radius: 7px;
+
+}
+
+.users > div img {
+	width: 50px;
+	border-radius: 50%;
+}
+
+.users > div {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.users > div:not(:last-child) {
+	padding-bottom: 10px;
+}
+
+.image-wrapper {
+	width: 50px;
+	height: 50px;
+}
+
+.image-wrapper img {
+	object-fit: cover;
+	width: auto;
+	height: 100%;
+}
+
+.no-bg {
+	background-color: #ffc8dd;
+}
+
+.users div div {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
